@@ -1,0 +1,67 @@
+<body>
+    <!-- Una forma-->
+    <!-- <section class="container" mockupdd-get-data="publishs" data="output">
+        <div class="row post" ng-repeat="publish in output">
+                <articulo class="clearfix">
+                    <a href="#" style="width: 40%" class="pull-left">
+                        <img style="width: 100%" src="http://lorempixel.com/800/440/" class="img-thumbnail" alt="" >
+                    </a>
+                    <p class="post-contenido text-justify">
+                        {{publish.name}}
+                    </p>
+                    <div class="contenedor-botones">
+                        <a class="btn btn-default"><span class="glyphicon glyphicon-comment">&#32;Comments&#32;<span class="badge">20</span></a> 
+                        <a class="btn btn-default"><span class="glyphicon glyphicon-hand-right">&#32;Likes&#32;<span class="badge">20</span></span></a>
+                        <a class="btn btn-default" mockupdd-navigate="likes">Likes</a>
+                        <a href="#" class="btn btn-default" mockupdd-navigate="addComment/{{publish.id}}" >Add comment</a>
+                        <a href="#" class="btn btn-default" mockupdd-dissociated="comments associatedWith publish" prop="{{publish.id}}" mockupdd-delete="publish in publishs">Delete</a>      
+                    </div>
+                </articulo>        
+        </div>
+    </section>  -->
+
+    <!-- otra forma-->
+    <section class="container" mockupdd-get-data="publishs" data="output">
+        <div class="row post" ng-repeat="publish in output">
+                <articulo mockupdd-get-data-associated-count="likes which {{publish.id}}" data="thisLikes">
+                    <a href="#"  >
+                        <img style="width: 100%" src="http://lorempixel.com/800/340/" class="img-thumbnail" alt="" >
+                    </a>
+                    <div class="contenedor-botones" mockupdd-get-data-associated-count="comments which {{publish.id}}" data="thisComments">
+                        <a class="btn btn-default" mockupdd-navigate="showComments/{{publish.id}}"><span class="glyphicon glyphicon-comment">&#32;Comments&#32;<span class="badge">{{thisComments}}</span></a> 
+                        <a class="btn btn-default" mockupdd-save-or-update="likes which {{publish.id}}" data="thisLikes"><span class="glyphicon glyphicon-hand-right">&#32;Likes&#32;<span class="badge">{{thisLikes}}</span></span></a>
+                        <a href="#" class="btn btn-default" mockupdd-navigate="likes/{{publish.id}}">Likes</a>
+                        <a href="#" class="btn btn-default" mockupdd-navigate="addComment/{{publish.id}}" >Add comment</a>
+                        <a href="#" class="btn btn-default" mockupdd-dissociated="comments/likes associatedWith publish" prop="{{publish.id}}" mockupdd-delete="publish in publishs">Delete</a>      
+                    </div>
+                    <p class="post-contenido text-justify">
+                        {{publish.name}}
+                    </p>
+                </articulo>   
+        </div>
+    </section> 
+
+    <div class="container">
+        <div class="jumbotron">
+                <form name="publishForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="mensaje" class="col-md-2 control-label">Publish</label>
+                        <div class="col-md-10">
+                        <textarea class="form-control" id="mensaje" placeholder="Post text" rows="3" ng-model="publish.name" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagenUrl" class="col-md-2 control-label">Image</label>
+                        <div class="col-md-10">
+                        <input type="text" class="form-control" id="imagenUrl" placeholder="Image URL (optional)">
+                        </div>
+                    </div>                            
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                        <button type="submit"  mockupdd-save="publish whichBelongsTo publishs" ng-disabled="!publishForm.$valid" class="btn btn-default" mockupdd-msg="Publish Saved Successfully">Publish</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>                
+</body>

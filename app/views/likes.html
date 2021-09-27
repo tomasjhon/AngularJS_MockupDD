@@ -1,0 +1,19 @@
+<body>
+    <div class="container" mockupdd-get-data-with-id="publish in publishs withId pathParam (2)" data="publish">
+       <section class="container" mockupdd-get-data-associated="likes associatedWith publish" data="likes">
+           <h2 class="post-title">
+             <a >Likes</a>
+           </h2>
+           <div class="row post" ng-repeat="like in likes">
+                   <articulo class="clearfix">
+                       <a href="#" style="width: 10%;padding-right: 20px;" class="pull-left">
+                           <img style="width: 100%" src="http://lorempixel.com/800/440/people" class="img-circle" alt="" >
+                       </a>
+                       <span class="text-justify">&#32;&#32;<strong>&#32;&#32;{{like.user}}</strong></span>&#32;&#32;
+                       <span class="post-fecha">{{like.date | date:'medium' }}</span>
+                   </articulo>        
+           </div>
+           <a mockupdd-navigate="publish" mockupdd-clear-dictionary="publish" class="btn btn-default">Home</a>
+       </section>
+   </div>
+   </body>

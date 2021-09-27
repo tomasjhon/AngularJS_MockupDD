@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  mockupdd:
+    container_name: mockupdd
+    #build: . use this, if you change the dockerfile
+    image: node:6.13.1
+    tty: true
+    ports:
+      - "0.0.0.0:8001:8000"
+    volumes:
+      - .:/usr/src/app/

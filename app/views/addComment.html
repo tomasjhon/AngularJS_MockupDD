@@ -1,0 +1,39 @@
+<body>
+  <div class="container" mockupdd-get-data-with-id="publish in publishs withId pathParam (2)" data="publish">
+    <div >
+      <div mockupdd-get-data-associated="comments associatedWith publish"  data="comments">
+        <h2 class="post-title">
+          <a >Comments:</a>
+        </h2>
+          <div class="row post" ng-repeat="comment in comments">
+                  <articulo class="clearfix">
+                      <a href="#" style="width: 10%;padding-right: 20px;" class="pull-left">
+                      <img style="width: 100%" src="http://lorempixel.com/800/440/people" class="img-circle" alt="" >
+                      </a>
+                      <span class="text-justify">&#32;&#32;<strong>&#32;&#32;{{comment.user}}</strong></span>
+                      <span class="post-fecha">{{comment.date | date:'medium' }}</span>                     
+                      <p class="text-justify">{{comment.name}}</p>
+                  </articulo>        
+          </div>          
+      </div>
+     </div>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+      <form name="commentForm" class="form-horizontal">
+          <div class="form-group">
+              <label for="comment" class="col-md-2 control-label">Comment</label>
+              <div class="col-md-10">
+              <textarea class="form-control" id="comment" ng-model="comment.name" placeholder="Add Comment" rows="3" required></textarea>
+              </div>
+          </div>                          
+          <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                  <button mockupdd-save="comment whichBelongsTo comments"  mockupdd-associated="comment to publish.comments" ng-disabled="!commentForm.$valid" class="btn btn-default" >Add</button>
+                  <a mockupdd-navigate="publish" class="btn btn-default">Home</a>
+              </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</body>

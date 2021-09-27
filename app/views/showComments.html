@@ -1,0 +1,22 @@
+<body>
+    <div class="container" mockupdd-get-data-with-id="publish in publishs withId pathParam (2)" data="publish">
+      <div >
+        <div mockupdd-get-data-associated="comments associatedWith publish"  data="comments">
+          <h2 class="post-title">
+            <a >Comments:</a>
+          </h2>
+            <div class="row post" ng-repeat="comment in comments">
+                    <articulo class="clearfix">
+                        <a href="#" style="width: 10%;padding-right: 20px;" class="pull-left">
+                        <img style="width: 100%" src="http://lorempixel.com/800/440/people" class="img-circle" alt="" >
+                        </a>
+                        <span class="text-justify">&#32;&#32;<strong>&#32;&#32;{{comment.user}}</strong></span>
+                        <span class="post-fecha">{{comment.date | date:'medium' }}</span>                     
+                        <p class="text-justify">{{comment.name}}</p>
+                    </articulo>        
+            </div>          
+        </div>
+       </div>
+       <a mockupdd-navigate="publish" class="btn btn-default">Home</a>
+    </div>
+  </body>
