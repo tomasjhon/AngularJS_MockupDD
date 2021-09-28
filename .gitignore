@@ -7,3 +7,5 @@ tmp
 .idea
 # Dockerfile
 npm-debug.log
+.bowerrc
+.travis.yml
