@@ -57,3 +57,9 @@ docker login
 ```
 docker push tomasjhon/mockupdd:latest
 ```
+
+- Creamos Contenedor
+
+```
+docker run -d --name mockupdd -p PORT:8000 tomasjhon/mockupdd
+```
